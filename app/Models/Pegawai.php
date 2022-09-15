@@ -20,7 +20,10 @@ class Pegawai extends Model {
         'nama',
         'alamat',
         'jenis_kelamin',
-        'jabatan',
+        'id_departemen',
     ];
 
+    public function departemen(){
+        return $this->belongsTo(Departemen::class);
+    }
 }

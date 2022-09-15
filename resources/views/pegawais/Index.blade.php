@@ -33,7 +33,7 @@
         <td>{{ $Pegawai->nama }}</td>
         <td>{{ $Pegawai->alamat }}</td>
         <td>{{ $Pegawai->jenis_kelamin }}</td>
-        <td>{{ $Pegawai->jabatan }}</td>
+        <td>{{ $Pegawai->departemen}}</td>
         <td>
             <form action="{{ route('pegawais.destroy',$Pegawai->nip) }}" method="POST">
 

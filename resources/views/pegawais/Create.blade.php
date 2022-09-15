@@ -40,8 +40,13 @@ rm">
                         <input type="jenis_kelamin" name="jenis_kelamin" class="form-control" id="jenis_kelamin" aria-describedby="jenis_kelamin">
                     </div>
                     <div class="form-group">
-                        <label for="jabatan">Jabatan</label>
-                        <input type="jabatan" name="jabatan" class="form-control" id="jabatan"aria-describedby="jabatan">
+                        <label for="departemen">Jabatan</label>
+                        <select class="form-control">
+                        @foreach($pegawais as $Pegawai)
+                            <option value="{{$Pegawai->id}}">{{$Pegawai->nama_departemen}}</option>
+                        @endforeach
+                        </select>
+                        <!--input type="jabatan" name="jabatan" class="form-control" id="jabatan"aria-describedby="jabatan"-->
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

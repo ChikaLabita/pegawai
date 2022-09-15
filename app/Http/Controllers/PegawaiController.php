@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
+use App\Models\Departemen;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -14,10 +15,14 @@ class PegawaiController extends Controller
      */
     public function index() {
         //fungsi eloquent menampilkan data menggunakan pagination
-        $pegawais = Pegawai::all(); // Mengambil semua isi tabel
+        /*$pegawais = Pegawai::all(); // Mengambil semua isi tabel
         $posts = Pegawai::orderBy('nip', 'desc')->paginate(6);
         return view('pegawais.index', compact('pegawais'));
         with('i', (request()->input('page', 1) - 1) * 5);
+        */
+        $pegawais = Pegawai::with('departemen')->get();
+        $paginate = Pegawai::orderBy('nip', 'desc')->paginate(6);
+        return view('pegawais.index', compact('pegawais'));
     }
 
     /**
@@ -42,7 +47,7 @@ class PegawaiController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'jenis_kelamin' => 'required',
-            'jabatan' => 'required',
+            'id_departemen' => 'required',
         ]);
         //fungsi eloquent untuk menambah data
         Pegawai::create($request->all());

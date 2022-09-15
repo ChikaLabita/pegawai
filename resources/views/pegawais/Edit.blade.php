@@ -44,10 +44,12 @@
                             value="{{ $Pegawai->jenis_kelamin }}" ariadescribedby="jenis_kelamin">
                     </div>
                     <div class="form-group">
-                        <label for="jabatan">Jabatan</label>
-
-                        <input type="jabatan" name="jabatan" class="form-control" id="jabatan"
-                            value="{{ $Pegawai->jabatan }}" ariadescribedby="jabatan">
+                    <label for="departemen">Jabatan</label>
+                        <select class="form-control">
+                        @foreach($Pegawai as $Pegawai)
+                            <option value="{{$Pegawai->id}}">{{$Pegawai->nama_departemen}}</option>
+                        @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
