@@ -24,6 +24,7 @@
         <th>Alamat</th>
         <th>Jenis Kelamin</th>
         <th>Jabatan</th>
+        <th>Foto</th>
         <th width="280px">Action</th>
     </tr>
     @foreach ($pegawais as $Pegawai)
@@ -34,6 +35,7 @@
         <td>{{ $Pegawai->alamat }}</td>
         <td>{{ $Pegawai->jenis_kelamin }}</td>
         <td>{{ $Pegawai->departemen}}</td>
+        <td><img width="100px" src="{{asset('storage/'.$Pegawai->image)}}"></td>
         <td>
             <form action="{{ route('pegawais.destroy',$Pegawai->nip) }}" method="POST">
 

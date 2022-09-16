@@ -94,7 +94,7 @@ class PegawaiController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'jenis_kelamin' => 'required',
-            'jabatan' => 'required',
+            'id_departemen' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
         Pegawai::find($nip)->update($request->all());

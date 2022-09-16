@@ -13,7 +13,8 @@
                     <li class="list-group-item"><b>Nama: </b>{{$Pegawai->nama}}</li>
                     <li class="list-group-item"><b>Alamat: </b>{{$Pegawai->alamat}}</li>
                     <li class="list-group-item"><b>Jenis Kelamin: </b>{{$Pegawai->jenis_kelamin}}</li>
-                    <li class="list-group-item"><b>Jabatan: </b>{{$Pegawai->departemen->nama_departemen}}</li>
+                    <li class="list-group-item"><b>Jabatan: </b>{{$Pegawai->departemen}}</li>
+                    <li class="list-group-item"><b>Foto: </b>{{$Pegawai->image}}</li>
                 </ul>
             </div>
             <a class="btn btn-success mt3" href="{{ route('pegawais.index') }}">Kembali</a>

@@ -35,8 +35,8 @@
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat</label>
-                        <input type="alamat" name="alamat" class="form-control" id="alamat" value="{{ $Pegawai->alamat }}"
-                            ariadescribedby="alamat">
+                        <input type="alamat" name="alamat" class="form-control" id="alamat"
+                            value="{{ $Pegawai->alamat }}" ariadescribedby="alamat">
                     </div>
                     <div class="form-group">
                         <label for="jenis_kelamin">Jenis Kelamin</label>
@@ -44,12 +44,17 @@
                             value="{{ $Pegawai->jenis_kelamin }}" ariadescribedby="jenis_kelamin">
                     </div>
                     <div class="form-group">
-                    <label for="departemen">Jabatan</label>
+                        <label for="departemen">Jabatan</label>
                         <select class="form-control">
-                        @foreach($Pegawai as $Pegawai)
-                            <option value="{{$Pegawai->id}}">{{$Pegawai->nama_departemen}}</option>
-                        @endforeach
+                            @foreach($Pegawai as $Pegawai)
+                            <option value="{{$Pegawai->nama_departemen}}">{{$Pegawai->nama_departemen}}</option>
+                            @endforeach
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Edit Foto</label>
+                        <br>
+                        <input type="file" class="form-control" required="required" name="upload"></br>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

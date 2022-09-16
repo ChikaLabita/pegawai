@@ -15,6 +15,6 @@ class UpdatePegawaiSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('pegawai')->update(['id_departemen' => 1]);
+        DB::table('pegawai')->update(['id_departemen' => 3]);
     }
 }

@@ -20,8 +20,7 @@
                     </ul>
                 </div>
                 @endif
-                <form method="post" action="{{ route('pegawais.store') }}" id="myFo
-rm">
+                <form method="post" action="{{ route('pegawais.store') }}" id="myForm">
                     @csrf
                     <div class="form-group">
                         <label for="nip">NIP</label>
@@ -41,12 +40,17 @@ rm">
                     </div>
                     <div class="form-group">
                         <label for="departemen">Jabatan</label>
+                        @foreach ($pegawais as $Pegawai)
                         <select class="form-control">
-                        @foreach($pegawais as $Pegawai)
                             <option value="{{$Pegawai->id}}">{{$Pegawai->nama_departemen}}</option>
-                        @endforeach
                         </select>
+                        @endforeach
                         <!--input type="jabatan" name="jabatan" class="form-control" id="jabatan"aria-describedby="jabatan"-->
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Upload Foto</label>
+                        <br>
+                        <input type="file" class="form-control" required="required" name="upload"></br>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
